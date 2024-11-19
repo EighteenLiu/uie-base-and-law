@@ -73,7 +73,7 @@ class ModelArguments:
 def main():
     parser = PdArgumentParser((ModelArguments, DataArguments, CompressionArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
-    training_args.resume_from_checkpoint = 'D:/python/bert/数据法治/checkpoint1/model_best/checkpoint-320'
+    training_args.resume_from_checkpoint = 'D:/python/bert/数据法治/checkpoint1/model_best/checkpoint-420'
 
     if model_args.model_name_or_path in ["uie-m-base", "uie-m-large"]:
         model_args.multilingual = True
@@ -104,7 +104,7 @@ def main():
                 f"Checkpoint detected, resuming training at {last_checkpoint}. To avoid this behavior, change "
                 "the `--output_dir` or add `--overwrite_output_dir` to train from scratch."
             )
-    checkpoint = 'D:/python/bert/数据法治/checkpoint1/model_best/checkpoint-400'
+    checkpoint = 'D:/python/bert/数据法治/checkpoint1/model_best/checkpoint-420'
     if training_args.resume_from_checkpoint is not None:
         checkpoint = training_args.resume_from_checkpoint
     elif last_checkpoint is not None:
